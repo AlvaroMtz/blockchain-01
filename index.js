@@ -5,5 +5,8 @@ const { name, version } = PKG;
 
 console.log(`${name} v${version}`);
 
-const block = new Block(Date.now(), 'previoushHash', 'hash', 'data')
+const {genesis} = Block;
+console.log(genesis.toString());
+
+const block = new Block(Date.now(), genesis.hash, 'hash', 'data')
 console.log(block.toString())
