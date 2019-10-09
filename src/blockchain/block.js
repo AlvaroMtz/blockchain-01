@@ -11,6 +11,14 @@ class Block {
         return new this(timestamp, undefined, '_g3nesis-h4sh', 'revolution')
     }
 
+    static mine (previousBlock, data) {
+        const timestamp = Date.now();
+        const hahs = '@TODO_hash';
+        const {hash:previousHash} = previousBlock;
+
+        return new this(timestamp, previousHash, hahs, data);
+    }
+
     toString() {
         const{
            timestamp, previousHash, hash, data,
