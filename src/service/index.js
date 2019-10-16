@@ -1,12 +1,14 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 
-import Blockchain from '../blockchain'
+import Blockchain from '../blockchain';
+import P2PService from './p2p';
 
 const { HTTP_PORT = 6000 } = process.env;
 
 const app = express();
 const blockchain = new Blockchain();
+const p2pService = new P2PService(blockchain);
 
 blockchain.addBlock('express')
 
@@ -27,5 +29,6 @@ app.post('/mine', (req, res) => {
 })
 
 app.listen(HTTP_PORT, () => {
-    console.log(`Service HTTP:${HTTP_PORT} listening...`)
+    console.log(`Service HTTP:${HTTP_PORT} listening...`);
+    p2pService.listen();
 })
