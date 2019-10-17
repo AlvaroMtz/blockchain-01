@@ -13,6 +13,5 @@ describe('Wallet', () =>{
         expect(typeof wallet.keyPair).toEqual('object');
         expect(typeof wallet.publicKey).toEqual('string');
         expect(wallet.publicKey.length).toEqual(130);
-
     })
 });
