@@ -9,7 +9,8 @@
     "start": "babel-node ./src/service/index.js",
     "nodemon": "nodemon --exec yarn start",
     "lint": "eslint index.js src",
-    "test:watch": "jest --watchAll"
+    "test:watch": "jest --watchAll",
+    "miner": "babel-node miner.js"
   },
   "author": "",
   "license": "MIT",

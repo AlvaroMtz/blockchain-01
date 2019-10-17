@@ -15,7 +15,7 @@ class Block {
 
   static get genesis() {
     const timestamp = (new Date(2000, 0, 1)).getTime();
-    return new this(timestamp, undefined, 'g3n3s1s-h4sh', 'revolution', 0);
+    return new this(timestamp, undefined, 'g3n3s1s-h4sh', 'i like ramen.', 0, DIFFICULTY);
   }
 
   static mine(previousBlock, data) {
@@ -41,7 +41,7 @@ class Block {
 
   toString() {
     const {
-      timestamp, previousHash, hash, data, nonce, difficulty
+      timestamp, previousHash, hash, data, nonce, difficulty,
     } = this;
 
     return `Block -
